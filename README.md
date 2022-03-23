@@ -1,4 +1,4 @@
 ## New PHP
 
 Dar Permissao para pastas no Linux 
-sudo CHMOD 777 -R
+sudo CHMOD 777 -R Total
