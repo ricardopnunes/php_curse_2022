@@ -27,10 +27,11 @@ echo "Teste com um numero digitado!";
 
 echo '<br></br><br></br>';
 
-if ($_REQUEST['num']%2 == 0){
-    echo "o numero: {$_REQUEST['num']} É par".'<br></br>';
-}else if($_REQUEST['num']%2 != 0){
-    echo "o numero: {$_REQUEST['num']} É impar".'<br></br>';
+$num_receb = $_REQUEST['num']; 
+if ($num_receb%2 == 0){
+    echo "o numero: {$num_receb} É par".'<br></br>';
+}else if($num_receb%2 != 0){
+    echo "o numero: {$num_receb} É impar".'<br></br>';
 }
 
 $array = [10];
@@ -39,8 +40,5 @@ for($a=0;$a<10;$a++){
     echo "Array: {$array[$a]}<br></br>";
 }
 
-<<<<<<< HEAD
-echo '<h1>Biruleibe do birutchu! </h1>';
-=======
 echo htmlspecialchars($array[9]);
->>>>>>> dev
+
