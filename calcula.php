@@ -10,9 +10,7 @@ function for_biru($array){
             $cont_par++;
         }
     }
-    echo "<br>Data da execução da Função For: ".date("d/m/y");
-    echo "<br>Contador de pares for: {$cont_par} <br> contador i for:{$i}";
-    echo "<br>Horário da execução da Função For: ".date("g:i:s a");
+    echo "<br><b>Contador de pares for: {$cont_par} <br> Contador i for:{$i}";
 }
 
 function while_biru($array){
@@ -26,9 +24,9 @@ function while_biru($array){
         }
        $i++;
     }
-    echo "<br>Data da execução da Função While: ".date("d/m/y");
-    echo "<br>Contador de pares while: {$cont_par} <br> contador i while:{$i}";
-    echo "<br>Horário da execução da Função while: ".date("g:i:s a");
+
+    echo "<br>Contador de pares while: {$cont_par} <br> Contador i while:{$i}";
+
 }
 
 function doo_while($array)
@@ -43,18 +41,14 @@ function doo_while($array)
        $i++;
     } while($cont_par<5);
     
-    echo "<br>Data da execução da Função do_while: ".date("d/m/y");
-    echo "<br>Contador de pares do_while: {$cont_par} <br> contador i do_while:{$i}";
-    echo "<br>Horário da execução da Função do while: ".date("g:i:s a");
+    echo "<br>Contador de pares do_while: {$cont_par} <br> Contador i do_while: {$i}</b>";
 }
 
 echo "Data Hora Inicio: " .date("d/m/y ") .date(" g:i:s a");
 for_biru($array);
 echo '<br><br><br>';
-echo "Data Hora Inicio: " .date("d/m/y ") .date(" g:i:s a");
 while_biru($array);
 echo '<br><br><br>';
-echo "Data Hora Inicio: " .date("d/m/y ") .date(" g:i:s a");
 doo_while($array);
-
+echo "<br>Data Hora Final: " .date("d/m/y ") .date(" g:i:s a");
 
