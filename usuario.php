@@ -1,38 +1,64 @@
 <?php
-require "cabecalho.php";
 
-$cont_impar;
-$cont_par;
-$resto;
-$num_receb = $_REQUEST['num'];
+$numero = [2,3,4,5,6,9,11,13,17,19,23,28,29,31,37,43,47,51,496];
+$perf = [1,2,3,6,28,496];
+$i =0;
+$primos = [];
+$perfeitos = [];
+$contPrimos = 0;
+$contPerfeitos =0;
 
 
-for($i=1;$i<$num_receb;$i++){
-    $resto=$i%2;
-    if($resto == 0){
-        echo "par: " . $i. ' <br></br>';
-        $cont_par++;
-    }else{
-        $cont_impar++;
-        echo"impar: ". $i. ' <br></br>';
+while($contPrimos < 5) {
+
+    $div = 0;
+    $n = $numero[$i];
+
+    for($j=1; $j <= $n; $j++) {
+
+        $resto = $n % $j;
+    
+
+        if($resto == 0){
+            $div++;
+        }
     }
+    
+    if($div == 2){
+
+        $contPrimos++;
+        array_push($primos, $n);
+    }   
+    
+    $i++;
+}
+
+for($j=0; $j < count($primos); $j++){
+    echo " Primo: " . $primos[$j];
 }
 
 
-echo "quantos pares de 1 a 10: {$cont_par} ".'<br></br>';
-echo "quantos impares de 1 a 10: {$cont_impar} ";
+$i =0;
+while($contPerfeitos < 3) {
+    $soma =0;
+    $n = $numero[$i];
 
+    for($j=1; $j <= $n; $j++) {
 
-echo '<br></br><br></br>';
+        $resto = $n % $j;
 
-echo "Teste com um numero digitado!";
+        if($resto == 0 && $j != $n){
+            $soma+=$j;
+            echo $soma;
+        }
+    }
+       
 
-echo '<br></br><br></br>'; 
-
-$array = [10];
-for($a=0;$a<10;$a++){
-    $array[$a] = $a;
-    echo "Array: {$array[$a]}<br></br>";
+    
+    $contPerfeitos++;
+    $i++;
 }
 
-echo htmlspecialchars($array[9]);
+for($j=0; $j < count($numero); $j++){
+    echo " Perfeito: " . $numero[$j];
+}

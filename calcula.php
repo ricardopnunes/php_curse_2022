@@ -4,6 +4,8 @@ class ClassFor{
 
     public $pares = [];
     public $impares = [];
+
+
     
     public function separa_vetores($array){
 
@@ -25,13 +27,13 @@ class ClassFor{
                 $impares[$cont_impares] = $array[$i];
                 $cont_impares++;
             }
+
         }
         
         echo "Numeros de pares: {$cont_par}<br> Numero de Impares: {$cont_impares} <br>";
         print_r($pares);
         echo "<br>";
         print_r($impares);
-        return $impares;
     }
 
 
@@ -62,8 +64,14 @@ class ClassFor{
     
         echo "<br>Contador de pares Classe do_while: {$cont_par} <br> Contador i do_while: {$i}</b>";
     }
+
+    
+    public function eprimo($impares){
+
+    }
 }  
 
 $n = new ClassFor;
-$n->separa_vetores($array);
-$n->conta_impares($impares);
+$a = $n->separa_vetores($array);
+var_dump($a);
+
