@@ -10,10 +10,13 @@ class Pessoa implements IPessoa
     public $email;
     public $rede_social;
 
-    public function __construct(int $id = 0, string $nome = null)
+    public function __construct(int $id, string $nome, int $cep, int $celular, bool $status = true)
     {
         $this->id = $id;
         $this->nome = $nome;
+        $this->cep = $cep;
+        $this->celular = $celular;
+        $this->status = $status;
     }
     public function Salvar($pessoa)
     {
