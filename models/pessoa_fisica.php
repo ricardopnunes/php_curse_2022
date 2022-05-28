@@ -15,7 +15,7 @@ class PessoaFisica extends Pessoa
     private $profissao;
     private $escolaridade;
 
-    //Getters
+    //GETTERS
     public function getCpf()
     {
         return $this->cpf;
@@ -53,7 +53,7 @@ class PessoaFisica extends Pessoa
         return $this->escolaridade;
     }
 
-    //Setters
+    //SETTERS
     public function setCpf($cpf)
     {
         $this->cpf = $cpf;

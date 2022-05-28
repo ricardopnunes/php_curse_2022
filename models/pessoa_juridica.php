@@ -10,6 +10,7 @@ class PessoaJuridica extends Pessoa
     private $nacionalidade;
     private $cnae;
 
+    //GETTERS
     public function getCnpj()
     {
         return $this->cnpj;
@@ -29,6 +30,28 @@ class PessoaJuridica extends Pessoa
     public function getCnae()
     {
         return $this->cnae;
+    }
+
+    //SETTERS   
+    public function setCnpj()
+    {
+        $this->cnpj = $cnpj;
+    }
+    public function setIe()
+    {
+        $this->ie = $ie;
+    }
+    public function setDataFunda()
+    {
+        $this->data_funda = $data_funda;
+    }
+    public function setNacionalidade()
+    {
+        $this->nacionalidade = $nacionalidade;
+    }
+    public function setCnae()
+    {
+        $this->cnae = $cnae;
     }
 
 
