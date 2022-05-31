@@ -22,7 +22,7 @@
   <div class="mb-4 row">
   <script src="../scripts/index.js"></script>
     <div class="col-sm-2">
-    <input oninput="mascara(this)" class="form-control" type="text" placeholder="CPF">
+    <input oninput="mask_cpf(this)" class="form-control" type="text" placeholder="CPF">
     </div>
   </div>
   <div class="mb-3 row">
@@ -31,8 +31,8 @@
     </div>
   </div>
   <div class="mb-3 row">
-    <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputCEP" placeholder="CEP">
+    <div class="col-sm-2">
+      <input oninput="mask_cep(this)" type="text" class="form-control" id="inputCEP" placeholder="CEP">
     </div>
   </div>
   <div class="mb-3 row">
@@ -67,6 +67,5 @@
 
     </div>
   </div>
-
 </body>
 </html>
