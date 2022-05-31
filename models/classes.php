@@ -18,19 +18,19 @@ class Pessoa implements IPessoa
         $this->celular = $celular;
         $this->status = $status;
     }
-    public function Salvar($pessoa)
+    public function Salvar(Pessoa $pessoa)
     {
         echo "Pessoa: $this->id and nome: $this->nome";
     }
-    public function ObtPessoa($id)
+    public function ObtPessoa(int $id)
     {
 
     }
-    public function Atualizar($pessoa)
+    public function Atualizar(Pessoa $pessoa)
     {
 
     }
-    public function Excluir($id)
+    public function Excluir(int $id)
     {
 
     }

@@ -1,8 +1,8 @@
 <?php
-require_once "../classes/IPessoa.php";
-require_once "../classes/pessoa_juridica.php";
-require_once "../classes/pessoa_fisica.php";
-require_once "../classes/classes.php";
+require_once "../models/IPessoa.php";
+require_once "../models/pessoa_juridica.php";
+require_once "../models/pessoa_fisica.php";
+require_once "../models/classes.php";
 ?>
 
 <form action="test_class.php" method="post">

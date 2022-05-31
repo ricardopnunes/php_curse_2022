@@ -5,90 +5,46 @@ require_once "IPessoa.php";
 class PessoaFisica extends Pessoa
 {
 
-    private $cpf;
-    private $genero; 
-    private $rg;
-    private $est_civil;
-    private $data_nasc;
-    private $pis;
-    private $naturalidade;
-    private $profissao;
-    private $escolaridade;
+    public $cpf;
+    public $genero; 
+    public $rg;
+    public $est_civil;
+    public $data_nasc;
+    public $pis;
+    public $naturalidade;
+    public $profissao;
+    public $escolaridade;
 
-    //GETTERS
-    public function getCpf()
-    {
-        return $this->cpf;
-    }
-    public function getGenero()
-    {
-        return $this->genero;
-    }
-    public function getDataNasc()
-    {
-        return $this->data_nasc;
-    }
-    public function getEstadoCivil()
-    {
-        return $this->est_civil;
-    }
-    public function getRg()
-    {
-        return $this->rg;
-    }
-    public function getPis()
-    {
-        return $this->pis;
-    }
-    public function getNaturalidade()
-    {
-        return $this->naturalidade;
-    }
-    public function getProfissao()
-    {
-        return $this->profissao;
-    }
-    public function getEscolaridade()
-    {
-        return $this->escolaridade;
+    public function __construct(){
+        parent::__construct;
     }
 
-    //SETTERS
-    public function setCpf($cpf)
-    {
-        $this->cpf = $cpf;
+    public function formata_cpf($cpf){
+
+        $cpf = preg_replace("/[^0-9]/", "", $cpf);
+        $tipo_dado = NULL;
+        if(strlen($cpf)==11){
+            $tipo_dado = "cpf";
+        }
+        if(strlen($cpf)==14){
+            $tipo_dado = "cnpj";
+        }
+        switch($tipo_dado){
+            default:
+                $cpf_formatado = "Não foi possível definir tipo de dado";
+            break;
+    
+            case "cpf":
+                $bloco_1 = substr($cpf,0,3);
+                $bloco_2 = substr($cpf,3,3);
+                $bloco_3 = substr($cpf,6,3);
+                $dig_verificador = substr($cpf,-2);
+                $cpf_formatado = $bloco_1.".".$bloco_2.".".$bloco_3."-".$dig_verificador;
+            break;
+            
+        }
+        return $cpf_formatado;
     }
-    public function setGenero($genero)
-    {
-        $this->genero = $genero;
-    }
-    public function setDataNasc($data_nasc)
-    {
-        $this->data_nasc = $data_nasc;
-    }
-    public function setEstadoCivil($est_civil)
-    {
-        $this->est_civil = $est_civil;
-    }
-    public function setRg($rg)
-    {
-        $this->rg = $rg;
-    }
-    public function setPis($pis)
-    {
-        $this->pis = $pis;
-    }
-    public function setNaturalidade($naturalidade)
-    {
-        $this->naturalidade = $naturalidade;
-    }
-    public function setProfissao($profissao)
-    {
-        $this->profissao = $profissao;
-    }
-    public function setEscolaridade($escolaridade)
-    {
-        $this->escolaridade = $escolaridade;
-    }
+    
     
 }

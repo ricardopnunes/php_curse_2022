@@ -1,8 +1,8 @@
 <?php
-require_once "IPessoa.php";
-require_once "pessoa_juridica.php";
-require_once "pessoa_fisica.php";
-require_once "classes.php";
+require_once "../models/IPessoa.php";
+require_once "../models/pessoa_juridica.php";
+require_once "../models/pessoa_fisica.php";
+require_once "../models/classes.php";
 
 
 // $id = $_POST['ID'];
