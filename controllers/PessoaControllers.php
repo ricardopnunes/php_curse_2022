@@ -5,41 +5,51 @@
 // require_once "../models/classes.php";
 
 
-// $id = $_POST['ID'];
-// $nome = $_POST['name'];
-// $cpf = $_POST['cpf/cnpj'];
-// $cep = $_POST['cep'];
-// $celular = $_POST['celular'];
-
-// $pessoa_fisica = new PessoaFisica(1,"Ricardo","9999999999","57");
-// $pessoa_fisica->setGenero("M");
-// echo $pessoa_fisica->getGenero();
-
-$dados_pessoa = [
-    "id" =>10,
+$pessoa1 = [
+    "id" => '10',
     "nome" =>"Ricardo P Nunes",
     "status" =>"Ativo",
     "email" =>"ricardopontin145@gmail.com",
     "phone" =>"54 991754639",
     "gender" =>"M",
     "type" =>"CPF",
-    "cep" =>"95707110"
+    "cep" =>"95707110",
+    
+];
 
+$pessoa2 = [
+    "id" =>'11',
+    "nome" =>"Aviao P Nunes",
+    "status" =>"Ativo",
+    "email" =>"Avião@gmail.com",
+    "phone" =>"54 991759999",
+    "gender" =>"M",
+    "type" =>"CNPJ",
+    "cep" =>"95707110",
+];
+
+$pessoa3 = [
+    "id" =>'12',
+    "nome" =>"Babybaby do Biruleibe Leibe",
+    "status" =>"Ativo",
+    "email" =>"Avião@gmail.com",
+    "phone" =>"54 991759999",
+    "gender" =>"M",
+    "type" =>"CNPJ",
+    "cep" =>"95707110",
+];
+
+$pessoa4 = [
+    "id" =>'13',
+    "nome" =>"Lohaine Stefâni Do HAHAHA",
+    "status" =>"Ativo",
+    "email" =>"Avião@gmail.com",
+    "phone" =>"54 991759999",
+    "gender" =>"M",
+    "type" =>"CNPJ",
+    "cep" =>"95707110",
 ];
 
 
-header('Content-Type: application/json; charset=utf-8');
-$a= json_encode($dados_pessoa);
-echo $a ;
-echo $a->nome;
-exit();
-
-
-
-
-
-
-
-
-
+$dados_pessoas = [$pessoa1,$pessoa2,$pessoa3,$pessoa4];
 
