@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary btnCriarUsuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Cadastrar
 </button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -28,7 +28,7 @@
         </div>
       </div>
     <div class="mb-3 row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <input type="text" class="form-control" id="inputPassword" placeholder="Nome">
       </div>
     </div>
@@ -82,7 +82,7 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-    <button type="button" class="btn btn-primary">Salvar</button>
+    <button type="button" class="btn btn-primary btnSalvarUsuariop">Salvar</button>
   </div>
 </div>
 </div>

@@ -17,7 +17,7 @@ require "../controllers/PessoaControllers.php";
     </thead>
     <tbody>';
 
-      foreach($dados_pessoas as $dado):
+      foreach($dados_pessoas as $dado){
         
       echo '<tr>
               <td>'.$dado['id'].'</td>
@@ -29,12 +29,12 @@ require "../controllers/PessoaControllers.php";
               <td>'.$dado['cep'].'</td>
               <td>'.$dado['gender'].'</td>
               <td>
-                <button type="button" class="btnEditar btn-primary" value='.$dado['id'].'>Editar</button>
-                <button type="button" class="btnExcluir btn-secondary" value='.$dado['id'].'>Excluir</button>
+                <button type="button" class="btn btn-primary btnEditar" data-bs-target="#exampleModal" value='.$dado['id'].'>Editar</button>
+                <button type="button" class="btn btn-secondary btnExcluir" value='.$dado['id'].'>Excluir</button>
               </td>
             </tr>';
 
-      endforeach;
+      }
 
     echo '</tbody>
   </table>';
