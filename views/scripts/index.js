@@ -1,6 +1,6 @@
 function mask_cpf(i){
    
-    var v = i.value;
+    let v = i.value;
     
     if(isNaN(v[v.length-1])){
        i.value = v.substring(0, v.length-1);
@@ -16,7 +16,7 @@ function mask_cpf(i){
 
 function mask_phone(o, f) {
     setTimeout(function () {
-        var v = f(o.value);
+        let v = f(o.value);
         if (v != o.value) {
             o.value = v;
         }
@@ -24,7 +24,7 @@ function mask_phone(o, f) {
 }
 
 function mphone(v) {
-    var r = v.replace(/\D/g,"");
+    let r = v.replace(/\D/g,"");
     r = r.replace(/^0/,"");
     if (r.length > 10) {
         r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/,"(0$1) $2-$3");
@@ -44,7 +44,7 @@ function mphone(v) {
 
 function mask_cep(i){
    
-    var v = i.value;
+    let v = i.value;
     
     if(isNaN(v[v.length-1])){
        i.value = v.substring(0, v.length-1);
@@ -54,3 +54,40 @@ function mask_cep(i){
     if (v.length == 5) i.value += "-"; 
 }
 
+
+
+function cria_tabela(dados_pessoas){
+    let tabela_pessoa = monta_colunas();
+    tabela_pessoa += cria_corpo(dados_pessoas);
+
+    if(!dados_pessoas || dados_pessoas.length <= 0){
+        tabela_pessoa = "<p><b>Nada para exibir</b></p>";
+    }
+
+    $("#idTabelaPessoa").html(tabela_pessoa)
+}
+
+
+function monta_colunas(){
+    let header = (
+        '<table class="table table-dark table-striped">'+
+        '<thead>'+
+            '<tr>'+
+              '<th>ID</th>'+
+              '<th>Nome</th>'+
+              '<th>CPF</th>'+
+              '<th>RG</th>'+
+              '<th>Rede Social</th>'+
+              '<th>Status</th>'+
+              '<th>Email</th>'+
+              '<th>Phone</th>'+
+              '<th>Tipo</th>'+
+              '<th>CEP</th>'+
+              '<th>Genero</th>'+
+              '<th>ACAO</th>'+
+            '</tr>'+
+          '</thead>'+
+          '<tbody>'
+    );
+    return header;
+}

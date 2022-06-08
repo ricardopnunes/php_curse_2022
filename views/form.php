@@ -29,11 +29,10 @@ require "../controllers/PessoaControllers.php";
               <td>'.$dado['cep'].'</td>
               <td>'.$dado['gender'].'</td>
               <td>
-                <button type="button" class="btn btn-primary btnEditar" data-bs-target="#exampleModal" value='.$dado['id'].'>Editar</button>
-                <button type="button" class="btn btn-secondary btnExcluir" value='.$dado['id'].'>Excluir</button>
+                <button type="button" id="btnEditar'.$dado['id'].'" class="btn btn-primary btnEditar" data-bs-target="#exampleModal" value='.$dado['id'].'>Editar</button>
+                <button type="button" id="btnExcluir'.$dado['id'].'" class="btn btn-secondary btnExcluir" value='.$dado['id'].'>Excluir</button>
               </td>
             </tr>';
-
       }
 
     echo '</tbody>
