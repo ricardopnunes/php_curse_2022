@@ -53,6 +53,7 @@ $dados_pessoas = [
     "type" =>"CNPJ",
     "cep" =>"95707110",
 ],
+
 [
     "id" => 5,
     "nome" =>"Ricardo P Nunes",
@@ -79,7 +80,7 @@ $dados_pessoas = [
 [
     "id" =>7,
     "nome" =>"Babybaby do Biruleibe Leibe",
-    "status" =>"Ativo",
+    "status" =>1,
     "email" =>"Avião@gmail.com",
     "phone" =>"54 991759999",
     "gender" =>"M",
@@ -108,5 +109,6 @@ foreach($dados_pessoas as $dado){
     }
 }
 
-header('Content-type: text/html; charset=utf-8');
-echo json_encode($pessoa);
+header("content-type: application/json, charset=utf-8");
+
+echo json_encode($dados_pessoas);

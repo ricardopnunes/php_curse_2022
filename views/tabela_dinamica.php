@@ -1,5 +1,4 @@
 <?php
-require "../controllers/PessoaControllers.php";
 
   echo '<table class="table table-dark table-striped">
   <thead>

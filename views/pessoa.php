@@ -1,3 +1,98 @@
+<?php
+  $dados_pessoas = [
+    [
+        "id" => 1,
+        "nome" =>"Ricardo P Nunes",
+        "status" =>"Ativo",
+        "email" =>"ricardopontin145@gmail.com",
+        "phone" =>"54 991754639",
+        "gender" =>"M",
+        "type" =>"CPF",
+        "cep" =>"95707110",
+        
+    ],
+    
+    [
+        "id" =>2,
+        "nome" =>"Aviao P Nunes",
+        "status" =>"Ativo",
+        "email" =>"Avião@gmail.com",
+        "phone" =>"54 991759999",
+        "gender" =>"M",
+        "type" =>"CNPJ",
+        "cep" =>"95707110",
+    ],
+    
+    [
+        "id" =>3,
+        "nome" =>"Babybaby do Biruleibe Leibe",
+        "status" =>"Ativo",
+        "email" =>"Avião@gmail.com",
+        "phone" =>"54 991759999",
+        "gender" =>"M",
+        "type" =>"CNPJ",
+        "cep" =>"95707110",
+    ],
+    
+    [
+        "id" =>4,
+        "nome" =>"Lohaine Stefâni Do HAHAHA",
+        "status" =>"Ativo",
+        "email" =>"Avião@gmail.com",
+        "phone" =>"54 991759999",
+        "gender" =>"M",
+        "type" =>"CNPJ",
+        "cep" =>"95707110",
+    ],
+    
+    [
+        "id" => 5,
+        "nome" =>"Ricardo P Nunes",
+        "status" =>"Ativo",
+        "email" =>"ricardopontin145@gmail.com",
+        "phone" =>"54 991754639",
+        "gender" =>"M",
+        "type" =>"CPF",
+        "cep" =>"95707110",
+        
+    ],
+    
+    [
+        "id" =>6,
+        "nome" =>"Aviao P Nunes",
+        "status" =>"Ativo",
+        "email" =>"Avião@gmail.com",
+        "phone" =>"54 991759999",
+        "gender" =>"M",
+        "type" =>"CNPJ",
+        "cep" =>"95707110",
+    ],
+    
+    [
+        "id" =>7,
+        "nome" =>"Babybaby do Biruleibe Leibe",
+        "status" =>"Ativo",
+        "email" =>"Avião@gmail.com",
+        "phone" =>"54 991759999",
+        "gender" =>"M",
+        "type" =>"CNPJ",
+        "cep" =>"95707110",
+    ],
+    
+    [
+        "id" =>8,
+        "nome" =>"Lohaine Stefâni Do HAHAHA",
+        "status" =>"Ativo",
+        "email" =>"Avião@gmail.com",
+        "phone" =>"54 991759999",
+        "gender" =>"M",
+        "type" =>"CNPJ",
+        "cep" =>"95707110",
+    ],
+    ];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,14 +117,19 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
     <div class="modal-body">
+    <div class="mb-3 row">
+        <div class="col-md-2">
+          <input type="number" id="idBanco" class="form-control" placeholder="ID" min="0" readonly>
+        </div>
+      </div>
       <div class="mb-3 row">
         <div class="col-md-6">
-          <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+          <input type="email" id="idEmail" class="form-control"  placeholder="E-mail">
         </div>
       </div>
     <div class="mb-3 row">
       <div class="col-md-4">
-        <input type="text" class="form-control" id="inputPassword" placeholder="Nome">
+        <input type="text" id="idNome" class="form-control" placeholder="Nome">
       </div>
     </div>
     <div class="mb-4 row">
@@ -89,9 +189,10 @@
 </div>
 </body>
 <footer>
-
+<table id="idTabelaUsuarios" class="table table-responsive table-dark table-striped">
+</table>
 <?php
-  require "./form.php";
+ // require "./tabela_dinamica.php";
 ?>
 
 </footer>
