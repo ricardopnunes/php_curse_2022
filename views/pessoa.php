@@ -1,98 +1,3 @@
-<?php
-  $dados_pessoas = [
-    [
-        "id" => 1,
-        "nome" =>"Ricardo P Nunes",
-        "status" =>"Ativo",
-        "email" =>"ricardopontin145@gmail.com",
-        "phone" =>"54 991754639",
-        "gender" =>"M",
-        "type" =>"CPF",
-        "cep" =>"95707110",
-        
-    ],
-    
-    [
-        "id" =>2,
-        "nome" =>"Aviao P Nunes",
-        "status" =>"Ativo",
-        "email" =>"Avião@gmail.com",
-        "phone" =>"54 991759999",
-        "gender" =>"M",
-        "type" =>"CNPJ",
-        "cep" =>"95707110",
-    ],
-    
-    [
-        "id" =>3,
-        "nome" =>"Babybaby do Biruleibe Leibe",
-        "status" =>"Ativo",
-        "email" =>"Avião@gmail.com",
-        "phone" =>"54 991759999",
-        "gender" =>"M",
-        "type" =>"CNPJ",
-        "cep" =>"95707110",
-    ],
-    
-    [
-        "id" =>4,
-        "nome" =>"Lohaine Stefâni Do HAHAHA",
-        "status" =>"Ativo",
-        "email" =>"Avião@gmail.com",
-        "phone" =>"54 991759999",
-        "gender" =>"M",
-        "type" =>"CNPJ",
-        "cep" =>"95707110",
-    ],
-    
-    [
-        "id" => 5,
-        "nome" =>"Ricardo P Nunes",
-        "status" =>"Ativo",
-        "email" =>"ricardopontin145@gmail.com",
-        "phone" =>"54 991754639",
-        "gender" =>"M",
-        "type" =>"CPF",
-        "cep" =>"95707110",
-        
-    ],
-    
-    [
-        "id" =>6,
-        "nome" =>"Aviao P Nunes",
-        "status" =>"Ativo",
-        "email" =>"Avião@gmail.com",
-        "phone" =>"54 991759999",
-        "gender" =>"M",
-        "type" =>"CNPJ",
-        "cep" =>"95707110",
-    ],
-    
-    [
-        "id" =>7,
-        "nome" =>"Babybaby do Biruleibe Leibe",
-        "status" =>"Ativo",
-        "email" =>"Avião@gmail.com",
-        "phone" =>"54 991759999",
-        "gender" =>"M",
-        "type" =>"CNPJ",
-        "cep" =>"95707110",
-    ],
-    
-    [
-        "id" =>8,
-        "nome" =>"Lohaine Stefâni Do HAHAHA",
-        "status" =>"Ativo",
-        "email" =>"Avião@gmail.com",
-        "phone" =>"54 991759999",
-        "gender" =>"M",
-        "type" =>"CNPJ",
-        "cep" =>"95707110",
-    ],
-    ];
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,22 +40,22 @@
     <div class="mb-4 row">
       <script src="./scripts/index.js"></script>
         <div class="col-sm-3">
-          <input oninput="mask_cpf(this)" class="form-control" type="text" placeholder="CPF">
+          <input oninput="mask_cpf(this)" id="idCpf" class="form-control" type="text" placeholder="CPF">
         </div>
     </div>
     <div class="mb-3 row">
       <div class="col-md-3">
-       <input type="text" class="form-control" id="inputRG" placeholder="RG">
+       <input type="text" class="form-control" id="idRg" placeholder="RG">
       </div>
     </div>
     <div class="mb-3 row">
       <div class="col-sm-3">
-        <input oninput="mask_cep(this)" type="text" class="form-control" id="inputCEP" placeholder="CEP">
+        <input oninput="mask_cep(this)" type="text" id="idCep" class="form-control" id="inputCEP" placeholder="CEP">
       </div>
     </div>
     <div class="mb-3 row">
       <div class="col-md-3">
-        <input type="text" class="form-control" id="inputPassword" placeholder="Rede Social">
+        <input type="text" class="form-control" id="idRedeSocial" placeholder="Rede Social">
       </div>
     </div>
     <div class="mb-1 row">
@@ -171,12 +76,12 @@
     </div>
     <div class="mb-3 row">
       <div class="col-sm-4">
-        <input type="date" class="form-control" id="inputDate" placeholder="Data de Nascimento">
+        <input type="date" class="form-control" id="idDate" placeholder="Data de Nascimento">
       </div>
     </div>
     <div class="mb-3 row">
       <div class="col-md-3">
-        <input type="text" id="inputPhone" class="form-control" placeholder="Celular" onkeypress="mask_phone(this, mphone)">
+        <input type="text" id="idPhone" class="form-control" placeholder="Celular" onkeypress="mask_phone(this, mphone)">
       </div>
     </div>
   </div>

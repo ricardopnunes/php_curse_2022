@@ -8,6 +8,9 @@ $( document ).ready(function() {
 
     });
 
+
+    $("#btnCriarUsuario")
+
     $("#idTabelaUsuarios").on("click", '.btnEditar',  function(){
         let idPessoa = $(this).val();
         url_base += "?id="+idPessoa;
@@ -15,16 +18,16 @@ $( document ).ready(function() {
 
             url_base = "http://localhost:3000/controllers/PessoaControllers.php"
             $("#idBanco").val(idPessoa);
-            $("#idNome").val(dado[0].nome);
-            $("#idEmail").val(dado[0].email);
-            $("#idCpf").val(dado[0].cpf);
-            $("#idPhone").val(dado[0].phone);
-            $("#idRg").val(dado[0].rg);
-            $("#idRedeSocial").val(dado[0].redeSocial);
-            $("#idStatus").val(dado[0].status);
-            $("#idTipo").val(dado[0].tipo);
-            $("#idCep").val(dado[0].cep);
-            $("#idGenero").val(dado[0].genero);
+            $("#idNome").val(dado[idPessoa-1].nome);
+            $("#idEmail").val(dado[idPessoa-1].email);
+            $("#idCpf").val(dado[idPessoa-1].cpf);
+            $("#idPhone").val(dado[idPessoa-1].phone);
+            $("#idRg").val(dado[idPessoa-1].rg);
+            $("#idRedeSocial").val(dado[idPessoa-1].redeSocial);
+            $("#idStatus").val(dado[idPessoa-1].status);
+            $("#idTipo").val(dado[idPessoa-1].tipo);
+            $("#idCep").val(dado[idPessoa-1].cep);
+            $("#idGenero").val(dado[idPessoa-1].genero);
 
             $(".modal").modal("show");
             
