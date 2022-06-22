@@ -5,18 +5,39 @@ $( document ).ready(function() {
     let url_base = "http://localhost:3000/controllers/PessoaControllers.php";
     $.get(url_base).done(function (dados_pessoas){
         monta_tabela(dados_pessoas);
-
     });
 
+    $(".btnCriarUsuario").on("click", function(){
 
-    $("#btnCriarUsuario")
+
+        $.get(url_base).done(function() {
+
+            $("#idBanco").val("");
+            $("#idNome").val("");
+            $("#idEmail").val("");
+            $("#idCpf").val("");
+            $("#idPhone").val("");
+            $("#idRg").val("");
+            $("#idRedeSocial").val("");
+            $("#idStatus").val("");
+            $("#idTipo").val("");
+            $("#idCep").val("");
+            $("#idGenero").val("");
+        });
+
+        $("#exampleModalLabel").html("Cadastrar");
+
+    })
+
 
     $("#idTabelaUsuarios").on("click", '.btnEditar',  function(){
-        let idPessoa = $(this).val();
-        url_base += "?id="+idPessoa;
-        $.get(url_base).done(function (dado) {
+        let idPessoa = $(this).val() 
+        let url_final = url_base+= "?id=" + idPessoa;
+
+        $.get(url_final).done(function (dado) {
 
             url_base = "http://localhost:3000/controllers/PessoaControllers.php"
+
             $("#idBanco").val(idPessoa);
             $("#idNome").val(dado[idPessoa-1].nome);
             $("#idEmail").val(dado[idPessoa-1].email);
@@ -30,6 +51,8 @@ $( document ).ready(function() {
             $("#idGenero").val(dado[idPessoa-1].genero);
 
             $(".modal").modal("show");
+
+            $("#exampleModalLabel").html("Editar");
             
         })
         console.log("Ready! Editar id: " + idPessoa);
@@ -62,8 +85,8 @@ $( document ).ready(function() {
                   <th>Status</th>
                   <th>Phone</th>
                   <th>Tipo</th>
-                  <th>CEP</th>
                   <th>Genero</th>
+                  <th>CEP</th>
                   <th>ACAO</th>
                 </tr>
               </thead>`
@@ -111,14 +134,14 @@ function monta_corpo(dados_pessoas){
 }
 
 function monta_tabela(dados_pessoas) {
-    var tabelaHtml = monta_colunas();
-    tabelaHtml += monta_corpo(dados_pessoas);
+    let tabela_html = monta_colunas();
+    tabela_html += monta_corpo(dados_pessoas);
 
     if (!dados_pessoas || dados_pessoas.length <= 0) {
-        tabelaHtml = "<p><b>Sem dados para exibir!</b></p>";
+        tabela_html = "<p><b>Sem dados para exibir!</b></p>";
     }
 
-    $("#idTabelaUsuarios").html(tabelaHtml);
+    $("#idTabelaUsuarios").html(tabela_html);
 }
 
 });

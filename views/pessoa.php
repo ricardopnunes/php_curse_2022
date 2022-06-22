@@ -24,37 +24,44 @@
     <div class="modal-body">
     <div class="mb-3 row">
         <div class="col-md-2">
+        <h6>ID:</h6>
           <input type="number" id="idBanco" class="form-control" placeholder="ID" min="0" readonly>
         </div>
       </div>
       <div class="mb-3 row">
         <div class="col-md-6">
+        <h6>Email:</h6>
           <input type="email" id="idEmail" class="form-control"  placeholder="E-mail">
         </div>
       </div>
     <div class="mb-3 row">
       <div class="col-md-4">
+      <h6>Nome:</h6>
         <input type="text" id="idNome" class="form-control" placeholder="Nome">
       </div>
     </div>
     <div class="mb-4 row">
       <script src="./scripts/index.js"></script>
         <div class="col-sm-3">
+        <h6>CPF:</h6>
           <input oninput="mask_cpf(this)" id="idCpf" class="form-control" type="text" placeholder="CPF">
         </div>
     </div>
     <div class="mb-3 row">
       <div class="col-md-3">
+      <h6>RG:</h6>
        <input type="text" class="form-control" id="idRg" placeholder="RG">
       </div>
     </div>
     <div class="mb-3 row">
       <div class="col-sm-3">
+      <h6>CEP:</h6>
         <input oninput="mask_cep(this)" type="text" id="idCep" class="form-control" id="inputCEP" placeholder="CEP">
       </div>
     </div>
     <div class="mb-3 row">
       <div class="col-md-3">
+        <h6>Rede Social:</h6>
         <input type="text" class="form-control" id="idRedeSocial" placeholder="Rede Social">
       </div>
     </div>
@@ -96,9 +103,6 @@
 <footer>
 <table id="idTabelaUsuarios" class="table table-responsive table-dark table-striped">
 </table>
-<?php
- // require "./tabela_dinamica.php";
-?>
 
 </footer>
 </html>
