@@ -47,8 +47,8 @@ $( document ).ready(function() {
             $("#idRedeSocial").val(dado[idPessoa-1].redeSocial);
             $("#idStatus").val(dado[idPessoa-1].status);
             $("#idTipo").val(dado[idPessoa-1].tipo);
-            $("#idCep").val(dado[idPessoa-1].cep);
             $("#idGenero").val(dado[idPessoa-1].genero);
+            $("#idCep").val(dado[idPessoa-1].cep);
 
             $(".modal").modal("show");
 
