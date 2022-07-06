@@ -9,36 +9,38 @@ $db = "curso22";
 
 $conexao = mysqli_connect($host, $user, $pass, $db);
 
-if(!$conexao)
+if($conexao->connect_error)
 {
-    echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
+    die("Conexão com o banco de dados falhou: ". $conexao->connect_error);
 }
 else
 {
-    echo "Deu bom!";
+    echo "Deu bom!\n";
 }
 
-$sql = mysqli_prepare($conexao,"INSERT INTO `curso22.pessoas` (nome,email,cpf,rg,genero,rede_social,status,phone,tipo,cep) 
+
+
+foreach($dados_pessoas as $dado){
+    $sql = "INSERT INTO curso22.pessoas (nome,email,cpf,rg,genero,rede_social,status,phone,tipo,cep) 
     VALUES (
-    {$dado['nome']},{$dado['email']},
-    {$dado['cpf']},{$dado['rg']},
-    {$dado['gender']},{$dado['redeSocial']},
-    {$dado['status']},{$dado['phone']},
-    {$dado['type']},{$dado['cep']})");
-    if($sql !== FALSE){
-        if(mysqli_stmt_execute($sql)){
-            echo "New record created successfully";
-        } else {
-            echo mysqli_stmt_error($sql);
-        }
-    } 
-        else{
-            echo mysqli_error($conexao);
-        }
+    '{$dado['nome']}',
+    '{$dado['email']}',
+    '{$dado['cpf']}',
+    '{$dado['rg']}',
+    '{$dado['gender']}',
+    '{$dado['redeSocial']}',
+    '{$dado['status']}',
+    '{$dado['phone']}',
+    '{$dado['type']}',
+    '{$dado['cep']}')";
 
+    if ($conexao->query($sql) === TRUE) {
+        echo "Registros adicionados!\n";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conexao->error;
+    }
 
-foreach($dados_pessoa as $dado){
 }
+
+
+  

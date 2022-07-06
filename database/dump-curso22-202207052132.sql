@@ -34,11 +34,11 @@ CREATE TABLE `pessoas` (
   `phone` varchar(12) DEFAULT NULL,
   `tipo` varchar(4) DEFAULT NULL,
   `cep` varchar(10) DEFAULT NULL,
-  `deleted]` tinyint(1) DEFAULT NULL,
-  `updated` datetime NOT NULL,
+  `deleted` tinyint(1) DEFAULT NULL,
+  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_user` varchar(100) DEFAULT NULL,
-  `created` datetime NOT NULL,
-  `created_user` varchar(100) DEFAULT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_user` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -75,6 +75,34 @@ LOCK TABLES `produtos` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuarios` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `deleted` datetime DEFAULT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` datetime DEFAULT CURRENT_TIMESTAMP,
+  `user_created` varchar(100) NOT NULL,
+  `user_updated` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,NULL,'2022-07-05 20:15:14','2022-07-05 20:15:14','1','1');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping routines for database 'curso22'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -87,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-28 21:56:01
+-- Dump completed on 2022-07-05 21:32:58

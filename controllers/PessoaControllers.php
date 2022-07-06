@@ -31,7 +31,7 @@ $dados_pessoas = [
     "rg" =>"96455454",
     "redeSocial" =>"@Creator",
     "status" =>0,
-    "email" =>"Avião@gmail.com",
+    "email" =>"Aviao@gmail.com",
     "phone" =>"54 991759999",
     "type" =>"CNPJ",
     "cep" =>"95707110",
@@ -45,7 +45,7 @@ $dados_pessoas = [
     "rg" =>"96455454",
     "redeSocial" =>"@Creator",
     "status" =>1,
-    "email" =>"Avião@gmail.com",
+    "email" =>"Aviao@gmail.com",
     "phone" =>"54 991759999",
     "type" =>"CNPJ",
     "cep" =>"95707110",
@@ -54,12 +54,12 @@ $dados_pessoas = [
 
 [
     "id" =>4,
-    "nome" =>"Lohaine Stefâni Do HAHAHA",
+    "nome" =>"Lohaine Stefani Do HAHAHA",
     "cpf" =>"04579729048",
     "rg" =>"96455454",
     "redeSocial" =>"@Creator",
     "status" =>1,
-    "email" =>"Avião@gmail.com",
+    "email" =>"Aviao@gmail.com",
     "phone" =>"54 991759999",
     "type" =>"CNPJ",
     "cep" =>"95707110",
@@ -88,7 +88,7 @@ $dados_pessoas = [
     "rg" =>"96455454",
     "redeSocial" =>"@Creator",
     "status" =>0,
-    "email" =>"Avião@gmail.com",
+    "email" =>"Aviao@gmail.com",
     "phone" =>"54 991759999",
     "type" =>"CNPJ",
     "cep" =>"95707110",
@@ -102,7 +102,7 @@ $dados_pessoas = [
     "rg" =>"96455454",
     "redeSocial" =>"@Creator",
     "status" =>1,
-    "email" =>"Avião@gmail.com",
+    "email" =>"Aviao@gmail.com",
     "phone" =>"54 991759999",
     "type" =>"CNPJ",
     "cep" =>"95707110",
@@ -111,16 +111,16 @@ $dados_pessoas = [
 
 [
     "id" =>8,
-    "nome" =>"Lohaine Stefâni Do HAHAHA",
+    "nome" =>"Lohaine Stefani Do HAHAHA",
     "cpf" =>"04579729048",
     "rg" =>"96455454",
     "redeSocial" =>"@Creator",
     "status" =>1,
-    "email" =>"Avião@gmail.com",
+    "email" =>"Aviao@gmail.com",
     "phone" =>"54 991759999",
     "type" =>"CNPJ",
     "cep" =>"95707110",
-    "gender" =>"M",
+    "gender" =>"F",
 ],
 ];
 
@@ -135,4 +135,4 @@ foreach($dados_pessoas as $dado){
 
 header("content-type: application/json, charset=utf-8");
 
-echo json_encode($dados_pessoas);
+json_encode($dados_pessoas);
