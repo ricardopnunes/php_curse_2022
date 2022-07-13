@@ -3,14 +3,16 @@
 $( document ).ready(function() {
 
     let url_base = "http://localhost:3000/controllers/PessoaControllers.php";
-    $.get(url_base).done(function (dados_pessoas){
+    let url_lista_todas = url_base + "?rota=listarTodaspessoas";
+
+    $.get(url_lista_todas).done(function (dados_pessoas){
         monta_tabela(dados_pessoas);
     });
 
     $(".btnCriarUsuario").on("click", function(){
 
 
-        $.get(url_base).done(function() {
+        $.get(url_lista_todas).done(function() {
 
             $("#idBanco").val("");
             $("#idNome").val("");
@@ -32,17 +34,15 @@ $( document ).ready(function() {
 
     $("#idTabelaUsuarios").on("click", '.btnEditar',  function(){
         let idPessoa = $(this).val() 
-        let url_final = url_base+= "?id=" + idPessoa;
+        let url_final = url_base+= "?id=" + idPessoa + "&rota=editarpessoa";
 
         $.get(url_final).done(function (dado) {
-
-            url_base = "http://localhost:3000/controllers/PessoaControllers.php"
 
             $("#idBanco").val(idPessoa);
             $("#idNome").val(dado[idPessoa-1].nome);
             $("#idEmail").val(dado[idPessoa-1].email);
             $("#idCpf").val(dado[idPessoa-1].cpf);
-            $("#idPhone").val(dado[idPessoa-1].phone);
+            $("#idPhone").val(dado[idPessoa-1].telefone);
             $("#idRg").val(dado[idPessoa-1].rg);
             $("#idRedeSocial").val(dado[idPessoa-1].redeSocial);
             $("#idStatus").val(dado[idPessoa-1].status);
@@ -62,7 +62,8 @@ $( document ).ready(function() {
 
     $(".btnExcluir").on("click", function(){
         let id = $(this).val();
-        url_base+="?id="+id;
+        url_final+="?id="+id + "&rota=excluirpessoa";
+        
         $.post(url_base).done(function(dado){
             console.log(JSON.stringify(dado));
         })
@@ -112,7 +113,7 @@ function monta_corpo(dados_pessoas){
         td += "<td>" + dados.rg + "</td>";
         td += "<td>" + dados.redeSocial + "</td>";
         td += "<td>" + statusDesc + "</td>";
-        td += "<td>" + dados.phone + "</td>";
+        td += "<td>" + dados.telefone + "</td>";
         td += "<td>" + dados.tipo + "</td>";
         td += "<td>" + dados.genero + "</td>";
         td += "<td>" + dados.cep + "</td>";
