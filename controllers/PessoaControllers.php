@@ -39,7 +39,7 @@ class PessoasController
     }
 
     // obtém todos os usuários
-    public function listarpessoas()
+    public function listar_pessoas()
     {
         $dados = [];
 
@@ -105,23 +105,28 @@ class PessoasController
             "mensagem" => "Não foi possível salvar o usuário. Contate o administrados!"
         ];
 
-        $idpessoa = $this->request["id"] ?? 0;
-        $nome = $this->request["nome"] ?? "";
-        $pessoa = $this->request["pessoa"] ?? "";
-        $email = $this->request["email"] ?? "";
-        $senha = $this->request["senha"] ?? "";
-        $status = $this->request["status"] ?? 0;
-        $email_recuperacao = $this->request["email_recuperacao"] ?? "";
+        $idpessoa    = $this->request['id'] ?? 0;
+
+        $nome        =$this->request['nome'] ?? "";
+        $email       =$this->request['email'] ?? "";
+        $cpf         =$this->request['cpf'] ?? "";
+        $rg          =$this->request['rg'] ?? "";
+        $genero      =$this->request['genero'] ?? "";
+        $rede_social =$this->request['rede_social'] ?? "";
+        $status      =$this->request['status'] ?? "";
+        $phone       =$this->request['phone'] ?? "";
+        $tipo        =$this->request['tipo'] ?? "";
+        $cep         =$this->request['cep'] ?? "";
 
         // ATUALIZAR
         if (!empty($idpessoa) && is_numeric($idpessoa)) {
             $mensagem = "Usuário atualizado com sucesso.";
 
-            $result = $this->pessoaModel->atualizar($nome, $pessoa, $email, $senha, $status, $email_recuperacao, $idpessoa);
+            $result = $this->pessoaModel->atualizar($idpessoa,$nome, $email,$cpf, $rg, $genero, $rede_social, $status,$phone,$tipo,$cep);
         } else {
             $mensagem = "Usuário cadastrado com sucesso.";
 
-            $result = $this->pessoaModel->cadastrar($nome, $pessoa, $email, $senha, $status, $email_recuperacao);
+            $result = $this->pessoaModel->cadastrar($nome, $email,$cpf, $rg, $genero, $rede_social, $status,$phone,$tipo,$cep);
             $idpessoa = $result;
         }
 
@@ -143,7 +148,7 @@ $objpessoasController = new PessoasController();
 // aqui obtemos nossa rota informada la no frontend (javascript) e conforme a rota informada redirecionamos a ação.
 switch ($objpessoasController->getRota()) {
     case "listarTodaspessoas":
-            $objpessoasController->listarpessoas();
+            $objpessoasController->listar_pessoas();
         break;
     case "editarpessoa":
             $objpessoasController->obterDadospessoa();
@@ -161,10 +166,3 @@ switch ($objpessoasController->getRota()) {
 
 $objpessoasController->desconectarModel();
     
-foreach($dadosPessoas as $dado){
-         if($dado['id'] == $idPessoa){
-             $array_pessoa = $dado;
-             break;
-         }
-    }
-

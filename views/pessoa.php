@@ -94,7 +94,7 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-    <button type="button" class="btn btn-primary btnSalvarUsuariop">Salvar</button>
+    <button type="button" class="btn btn-primary btnSalvarUsuario" data-bs-dismiss="modal">Salvar</button>
   </div>
 </div>
 </div>

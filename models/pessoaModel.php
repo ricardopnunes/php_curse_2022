@@ -9,11 +9,11 @@ class PessoaModel
 
     public function __construct()
     {
-        global $conexao; // acessamos (global) a variavel $conexao do arquivo Conexao.php
+        global $conexao;
         $this->conexao = $conexao;
     }
 
-    // desconectamos do banco de dados.
+    
     public function desconectar()
     {
         $this->conexao->close();
@@ -56,11 +56,11 @@ class PessoaModel
         {$email},
         {$cpf},
         {$rg},
-        {$gender},
-        {$redeSocial},
+        {$genero},
+        {$rede_social},
         {$status},
         {$phone},
-        {$type},
+        {$tipo},
         {$cep});";
 
         $result = $this->conexao->query($sql);
@@ -72,28 +72,28 @@ class PessoaModel
         return 0;
     }
 
-    public function atualizar($nome, $email,$cpf, $rg, $genero, $rede_social, $status,$phone,$tipo,$cep)
+    public function atualizar($idpessoa,$nome, $email,$cpf, $rg, $genero, $rede_social, $status,$phone,$tipo,$cep)
     {
         $sql = "UPDATE
 				{$this->nomeTabela}
 			SET
-            nome        =       {$nome}
-            email       =       {$email}
-            cpf         =       {$cpf}
-            rg          =       {$rg}
-            genero      =       {$gender}
-            rede_social =       {$redeSocial}
-            status      =       {$status}
-            phone       =       {$phone}
-            tipo        =       {$type}
-            cep         =       {$cep}
+            nome        =       '{$nome}',
+            email       =       '{$email}',
+            cpf         =       '{$cpf}',
+            rg          =       '{$rg}',
+            genero      =       '{$genero}',
+            rede_social =       '{$rede_social}',
+            status      =       '{$status}',
+            phone       =       '{$phone}',
+            tipo        =       '{$tipo}',
+            cep         =       '{$cep}'
 			WHERE
-				id = {$idUsuario};";
+				id = '{$idpessoa}';";
 
         $result = $this->conexao->query($sql);
 
         if ($result) {
-            return $this->conexao->affected_rows; // retorna o numero de linhas atualizadas.
+            return $this->conexao->affected_rows; 
         }
 
         return 0;
@@ -103,15 +103,23 @@ class PessoaModel
     {
         $sql = "UPDATE {$this->nomeTabela} 
                 SET 
-                deleted = 1
+                deleted = 1,
                 status  = 0
                 WHERE id={$idUsuario}";
 
         $result = $this->conexao->query($sql);
+        
+        if ($result) {
+            return $this->conexao->affected_rows; // retorna o numero de linhas atualizadas.
+        }
 
-        return $result;
+        return 0;
     }
 }
+
+
+$pessoaModel = new PessoaModel();
+$pessoaModel->listar();
 
 // $pessoa = new PessoaModel();
 // $dadosPessoa = [];
