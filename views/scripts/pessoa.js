@@ -73,6 +73,7 @@ $( document ).ready(function() {
             $("#idTipo").val(response[0].tipo);
             $("#idGenero").val(response[0].genero);
             $("#idCep").val(response[0].cep);
+            
 
             $(".modal").modal("show");
     
@@ -106,18 +107,18 @@ $( document ).ready(function() {
             $.get(url_final).done(function(response){
 
             $("#idBanco").val(idPessoa);
-            $("#idNome").val(response[0].nome);
-            $("#idEmail").val(response[0].email);
-            $("#idCpf").val(response[0].cpf);
-            $("#idPhone").val(response[0].telefone);
-            $("#idRg").val(response[0].rg);
-            $("#idRedeSocial").val(response[0].redeSocial);
-            $("#idStatus").val(response[0].status);
-            $("#idTipo").val(response[0].tipo);
-            $("#idGenero").val(response[0].genero);
-            $("#idCep").val(response[0].cep);
+            $("#idNome").val(this);
+            $("#idEmail").val(this);
+            $("#idCpf").val(this);
+            $("#idPhone").val(this);
+            $("#idRg").val(this);
+            $("#idRedeSocial").val(this);
+            $("#idStatus").val(this);
+            $("#idTipo").val(this);
+            $("#idGenero").val(this);
+            $("#idCep").val(this);
 
-                console.log("Nome = ", $("#idNome").val());
+                console.log("Nome = ", $("#idNome").val(this));
             });
         });
     }
